@@ -24,10 +24,18 @@ class PlayerController extends Controller
         return response()->json($player, 201);
     }
 
-    public function show(Player $player)
+    public function show(Player $player) //route model binding
     {
+        $player->load('profile');
         return response()->json($player);
     }
+
+    public function showAlternative($id) //route model binding
+    {
+        $player = Player::with('profile')->find($id);
+        return response()->json($player);
+    }
+
 
     public function update(Request $request, Player $player)
     {

@@ -16,4 +16,5 @@ Route::put('/players/{player}', [PlayerController::class, 'update']);
 Route::delete('/players/{player}', [PlayerController::class, 'destroy']);
 
 
+Route::get('/players/{id}/alternative', [PlayerController::class, 'showAlternative']);
 //Route::resource('players', PlayerController::class);

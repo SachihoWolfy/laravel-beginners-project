@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Player extends Model
+class Profile extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'score'];
-
-    public function profile()
+    public function player()
     {
-        return $this->hasOne(Profile::class);
+        return $this->belongsTo(Player::class);
     }
 
 }
