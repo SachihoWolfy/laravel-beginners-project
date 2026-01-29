@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\PlayerController;
+use \App\Http\Controllers\GameSessionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 
 Route::get('/players', [PlayerController::class, 'index']);
@@ -18,3 +18,6 @@ Route::delete('/players/{player}', [PlayerController::class, 'destroy']);
 
 Route::get('/players/{id}/alternative', [PlayerController::class, 'showAlternative']);
 //Route::resource('players', PlayerController::class);
+
+Route::resource('game-sessions', GameSessionController::class);
+Route::get('players/{player}/game-sessions', [GameSessionController::class, 'indexByPlayer']);
