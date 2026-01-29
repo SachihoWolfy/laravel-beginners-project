@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             PlayerSeeder::class,
             ProfileSeeder::class,
-            GameSessionSeeder::class
+            GameSessionSeeder::class,
+            TeamSeeder::class,
         ]);
     }
 }
